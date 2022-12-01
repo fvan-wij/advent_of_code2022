@@ -1,3 +1,4 @@
+#P1
 sum = 0
 i = 0
 calories = []
@@ -10,6 +11,10 @@ with open('Day_1/input_d1.txt') as f:
 			calories.append(sum)
 			sum = 0
 
+max_calories = max(calories)
+print("Max calories = {}".format(max_calories))
+
+#P2
 j = 0
 sum_top_3 = 0
 for j in range(3):
