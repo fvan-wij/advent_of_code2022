@@ -1,8 +1,8 @@
 #P1
 result = 0
-with open('Day_3/input1.txt') as f:
+with open('Day_3/input.txt') as f:
 	for line in f:
-		n = len(line) - 1
+		n = len(line)
 		s1 = line[0:n//2]
 		s2 = line[n//2:]
 		set_s1 = set(s1)
@@ -18,5 +18,3 @@ with open('Day_3/input1.txt') as f:
 		print("Priority value is {}".format(letter_value))
 		result += letter_value
 	print("\n--Result is: {}--\n".format(result))
-
-
