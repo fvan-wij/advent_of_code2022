@@ -1,5 +1,4 @@
 #P1
-
 crateRow =	([['S', 'Z', 'P', 'D', 'L', 'B', 'F', 'C'], 
 ['N', 'V', 'G', 'P', 'H', 'W', 'B'],
 ['F', 'W', 'B', 'J', 'G'],
@@ -10,21 +9,14 @@ crateRow =	([['S', 'Z', 'P', 'D', 'L', 'B', 'F', 'C'],
 ['F', 'S', 'W', 'T'], 
 ['N', 'C', 'R']])
 
-#Test case
-# crateRow = ([['Z', 'N'], ['M', 'C', 'D'], ['P']])
-
 instructions = []
 
-with open('day_5/input.txt') as f:
+with open('day_5/input.txt') as f: #Parse input
 	for lineno, line in enumerate(f):
 		if lineno > 9:
 			instructions.append([int(s) for s in line.split() if s.isdigit()])
 
-# with open('day_5/test.txt') as f:
-# 	for lineno, line in enumerate(f):
-# 			instructions.append([int(s) for s in line.split() if s.isdigit()])
-
-def move_crate(nOfCrates, sourc, dest):
+def move_crate(nOfCrates, sourc, dest): #Delete nOfCrates from source and append to destination
 	temp = []
 	temp.append(crateRow[sourc - 1][-nOfCrates:])
 	del crateRow[sourc - 1][-nOfCrates:]
@@ -37,14 +29,14 @@ n = [] #n of crates to be moved
 src = [] #from source
 dst = [] #to destination
 
-for i in range(len(instructions)):
+for i in range(len(instructions)): #Parse instructions into seperate int variables
 	n.append(instructions[i][0])
 	src.append(instructions[i][1])
 	dst.append(instructions[i][2])
 
-for j in range(len(instructions)):
+for j in range(len(instructions)): #Iterate move_crate() using parsed instructions
 	move_crate(n[j], src[j], dst[j])
 
 print(crateRow)
-	
-FWSHSPJWM
+
+#P1 = FWSHSPJWM
