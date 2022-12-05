@@ -1,4 +1,4 @@
-#P1
+#P2
 
 crateRow =	([['S', 'Z', 'P', 'D', 'L', 'B', 'F', 'C'], 
 ['N', 'V', 'G', 'P', 'H', 'W', 'B'],
@@ -25,13 +25,15 @@ with open('day_5/input.txt') as f:
 # 			instructions.append([int(s) for s in line.split() if s.isdigit()])
 
 def move_crate(nOfCrates, sourc, dest):
+	x = 0
 	temp = []
+
 	temp.append(crateRow[sourc - 1][-nOfCrates:])
 	del crateRow[sourc - 1][-nOfCrates:]
-	j = len(temp[0]) - 1
-	while j != -1:
-		crateRow[dest - 1].append(temp[0][j])
-		j -= 1
+	j = len(temp[0])
+	while x < j:
+		crateRow[dest - 1].append(temp[0][x])
+		x += 1
 
 n = [] #n of crates to be moved
 src = [] #from source
@@ -47,4 +49,5 @@ for j in range(len(instructions)):
 
 print(crateRow)
 	
-FWSHSPJWM
+# P1 = FWSHSPJWM
+# P2 = PWPWHGFZS
